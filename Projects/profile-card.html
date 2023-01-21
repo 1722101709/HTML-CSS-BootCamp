@@ -1,0 +1,354 @@
+<html>
+<head>
+	<title>Profile page</title>
+</head>
+
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	body{
+		background: #010101;
+		color : #F3F3F3;
+	}
+	.container{
+		margin: 20px 5px;
+	}
+	.cards{
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: repeat(3, auto);
+		margin: 30px;
+	}
+	.card{
+		width: 380px;
+		height: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background: #171717;
+		-webkit-backdrop-filter: blur(100px);
+		backdrop-filter: blur(100px);
+		box-shadow: 0 0 30px #111,
+					0 0 20px #111,
+					0 0 10px #111;	
+		border-radius: 30px;
+		overflow: hidden;
+		opacity: 0.6;
+		cursor: pointer;
+	}
+	.card:hover{
+		opacity: 1;
+	}
+	.img{
+		width : 200px;
+		height: 200px;
+		overflow: hidden;
+		border-radius: 50%;
+		background-position: 30%;
+	} 
+	.img img{
+		border-radius: 50%;
+		width : 200px;
+		aspect-ratio : 1/1;
+		border: 1px solid #555;
+		transition: 0.5s ease-in-out;
+		object-fit: cover;
+	}
+	.info{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin: 30px 10px 10px 10px;
+	}
+	.info span:nth-child(1){
+		font-size: 21px;
+		font-weight: 900;
+	}
+	.info span:nth-child(2){
+		font-size: 11px;
+	}
+	.info span:nth-child(3){
+		margin: 30px 10px 10px 30px;
+	}
+
+	.img img:hover{
+		transform: scale(1.2);
+	}
+	.movies{
+		display: grid;
+		grid-template-columns: repeat(7, auto);
+		grid-gap: 40px 15px;
+		width: 100vw;
+		height: auto;
+	}
+	.movie{
+		width: 150px;
+		height: 200px;
+		position: relative;
+		margin-bottom: 30px;
+		cursor: pointer;
+	}
+	.front, .front img{
+		width: 100%;
+		height: 100%;
+		z-index: 11;
+		position: relative;
+		transition: 1s ease-in-out;
+	}
+	.front{
+		backface-visibility: hidden;
+	}
+	.bottom{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 19px;
+	}
+	.bottom span{
+		margin: 5px;
+	}
+	.back{
+		position: absolute;
+		top: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 13px;
+		transform: rotateX(-180deg);
+		transition: 1s ease-in-out;
+		width: 150px;
+		height: 200px;
+	}
+	.movie:hover{
+		box-shadow: 0 0 10px #111,
+					0 0 20px #111,
+					0 0 30px #111;
+	}
+	.movie:hover .front{
+		transform: rotateX(180deg);
+	}
+	.movie:hover .back{
+		transform: rotateX(0deg);
+	}
+	.movie:hover .bottom{
+		color: indianred;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="cards">
+			<div class="card">
+				<div class="img">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\LDC.jpeg" alt="Leonardo DiCaprio">
+				</div>
+				<div class="info">
+					<span>Leonardo DiCaprio</span>
+					<span>Hollywood Actor</span>
+					<span>Acted in movies like Titanic, Inception, Wolf of wall street, Django the unchained, Once upon a time in hollywood etc...</span>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="img">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\CaptainJackSparrow.jpg" alt="Johnny Depp">
+				</div>
+				<div class="info">
+					<span>Johnny Depp</span>
+					<span>Hollywood Actor</span>
+					<span>Acted in movies like Pirates of the Caribbean series, Charlie the chocolate factory, Dark Shadows, Private Resort etc...</span>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="img">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\fafa.jpeg" alt="Fahadh Fazil">
+				</div>
+				<div class="info">
+					<span>Fahadh Fazil</span>
+					<span>Mollywood Actor</span>
+					<span>Acted in movies like Kumbalangi Nights, Bangalore Days, Malayankunju, Joji, Trance, Pushpa the rise, Vikram etc...</span>
+				</div>
+			</div>
+		</div>	
+		<div class="movies">
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\pirates_of_the_caribbean.jpeg" alt="Pirates of the Caribbean">
+				</div>
+				<div class="bottom">
+					<span>Pirates of the Caribbean</span>
+				</div>
+				<div class="back">
+					<span>Pirates of the Caribbean is a Disney media franchise encompassing numerous theme park rides, a series of films, and spin-off novels, as well as a number of related video games and other media publications</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\inception.jpeg" alt="Inception">
+				</div>
+				<div class="bottom">
+					<span>Inception</span>
+				</div>
+				<div class="back">
+					<span>Inception is a 2010 science fiction action film written and directed by Christopher Nolan. The film stars Leonardo DiCaprio as a professional thief who steals information by infiltrating the subconscious of his targets.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\rrr.jpeg" alt="RRR">
+				</div>
+				<div class="bottom">
+					<span>RRR</span>
+				</div>
+				<div class="back">
+					<span>RRR is a 2022 Indian Telugu-language epic action drama film directed by S. S. Rajamouli, produced by D. V. V. Danayya of DVV Entertainment. The film stars N. T. Rama Rao Jr and Ram Charan</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\kumbalangi_nights.jpeg" alt="Kumbalangi Nights">
+				</div>
+				<div class="bottom">
+					<span>Kumbalangi Nights</span>
+				</div>
+				<div class="back">
+					<span>Kumbalangi Nights is a 2019 Indian Malayalam-language drama film directed by Madhu C. Narayanan, produced by Fahadh Faasil and Nazriya Nazim.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\sivaji.jpeg" alt="Sivaji">
+				</div>
+				<div class="bottom">
+					<span>Sivaji:The Boss</span>
+				</div>
+				<div class="back">
+					<span>Sivaji: The Boss is a 2007 Indian Tamil-language action masala film directed by S. Shankar and produced by AVM Productions.This film stars Super Star Rajinikanth.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\3.jpeg" alt="Moonu">
+				</div>
+				<div class="bottom">
+					<span>3(Moonu)</span>
+				</div>
+				<div class="back">
+					<span>3 is a 2012 Indian Tamil-language romantic psychological thriller film written and directed by Aishwarya R. Dhanush, the wife of actor Dhanush.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\msdhoni.jpeg" alt="MS Dhoni:The Untold Story">
+				</div>
+				<div class="bottom">
+					<span>MS Dhoni:The Untold Story</span>
+				</div>
+				<div class="back">
+					<span>M.S. Dhoni: The Untold Story is a 2016 Indian Hindi-language biographical sports drama film written and directed by Neeraj Pandey.This film stars Sushanth Singh Rajput, Disha Patani and Kiara Advani.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\Asuran.jpeg" alt="Asuran">
+				</div>
+				<div class="bottom">
+					<span>Asuran</span>
+				</div>
+				<div class="back">
+					<span>Asuran is a 2019 Indian Tamil-language action drama film written and directed by Vetrimaaran.It is based on the novel Vekkai.This film stars Dhanush and Manju Warrier.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\uppena.jpeg" alt="Uppena">
+				</div>
+				<div class="bottom">
+					<span>Uppena</span>
+				</div>
+				<div class="back">
+					<span>Uppena is a 2021 Indian Telugu-language romantic drama film written and directed by newcomer Buchi Babu Sana.This film stars Vijay Sethupathi, Krithi Shetty and Vaishnav Tej.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\once_upon_a_time_in_hollywood.jpeg" alt="Once Upon a Time in Hollywood">
+				</div>
+				<div class="bottom">
+					<span>Once Upon a Time in Hollywood</span>
+				</div>
+				<div class="back">
+					<span>Once Upon a Time in Hollywood is a 2019 comedy-drama film written and directed by Quentin Tarantino.This film stars Leonardo DiCaprio and Brad pitt</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\interstellar.jpeg" alt="Interstellar">
+				</div>
+				<div class="bottom">
+					<span>Interstellar</span>
+				</div>
+				<div class="back">
+					<span>Interstellar is a 2014 epic science fiction film co-written, directed, and produced by Christopher Nolan.It stars Matthew McConaughey, Anne Hathaway, Jessica Chastain.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\attarintiki_daredi.jpeg" alt="Attarintiki Daredi">
+				</div>
+				<div class="bottom">
+					<span>Attarintiki Daredi</span>
+				</div>
+				<div class="back">
+					<span>Attarintiki Daredi is a 2013 Indian Telugu-language action comedy film written and directed by Trivikram Srinivas.The film stars Pawan Kalyan, Samantha and Pranitha Subhash. Nadhiya, Boman Irani and Brahmanandam feature in supporting roles.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\chatrapathi.jpeg" alt="Chatrapathi">
+				</div>
+				<div class="bottom">
+					<span>Chatrapathi</span>
+				</div>
+				<div class="back">
+					<span>Chatrapathi is a 2005 Indian Telugu-language action drama film co-written and directed by S. S. Rajamouli.This film stars Prabhas, Shreya saran, Banu Priya, Shafi.</span>
+				</div>
+			</div>
+
+			<div class="movie">
+				<div class="front">
+					<img src="C:\Users\KADIRI MOHAN KUMAR\Downloads\son_of_sathyamurthy.jpeg" alt="S/O Sathyamurthy">
+				</div>
+				<div class="bottom">
+					<span>S/O Sathyamurthy</span>
+				</div>
+				<div class="back">
+					<span>S/O Satyamurthy is a 2015 action drama film written and directed by Trivikram Srinivas.The film stars Allu Arjun, Upendra, Samantha, Nithya Menen, Sneha, and Adah Sharma while Rajendra Prasad, Sampath Raj, Rao Ramesh, Vennela Kishore, and Ali plays a supporting roles</span>
+				</div>
+			</div>
+
+
+		</div>
+	</div>	
+</body>
+</html>

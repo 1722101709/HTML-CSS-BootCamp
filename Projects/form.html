@@ -1,0 +1,139 @@
+<html>
+<head>
+	<title>Login Form</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		color: #F3F3F3;
+		background: #010101;
+	}
+	.container{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	form{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 1px solid #222;
+		width : 350px;
+		height: 400px;
+		box-shadow: 0 0 1px #222,
+					0 0 2px #222,
+					0 0 3px #222;
+		background: #0A0A0A;
+		border-radius: 11px;
+	}
+	form div{
+		margin: 20px 10px;	
+	}
+	form div label{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	label, span, input{
+		background: #0A0A0A;
+		cursor: text;
+	}
+	span{
+		font-size: 17px;
+		position: absolute;
+		z-index: 3;
+		transition: 0.75s ease-in-out;
+		transition-delay: 0.1s;
+		opacity: 0.1;
+		font-weight: 300;
+	}
+	input{
+		border: none;
+		outline: none;
+		font-size: 17px;
+		border: 1px solid #777;
+		width: 200px;
+		height: 36px;
+		border-radius: 13px;
+		padding: 5px 0px 5px 7px;
+		text-align: center;
+	}
+	button{
+		width: 120px;
+		aspect-ratio : 3/1;
+		background: #0A0A0A;
+		border: 1px solid #777;
+		border-radius: 10px;
+		font-size: 17px;
+		color: 3184BF;
+		cursor: pointer;
+		animation: 1s rainbow infinite alternate;
+	}
+	button:hover{
+		animation: none;
+		border-color: orange;
+	}
+	input:focus{
+		border-color: #BD8C1F;
+	}
+	input:focus + span{
+		font-size: 13px;
+		transform: translate(calc(-100% - 1px), calc(-100% - 1px));
+		opacity: 1;
+		color: lightcyan;
+		font-weight: 900;
+		font-style: italic;
+	}
+	@keyframes rainbow {
+		0%{
+			border: 1px solid violet;
+		}
+		15%{
+			border: 1px solid indigo;
+		}
+		30%{
+			border: 1px solid blue;
+		}
+		45%{
+			border: 1px solid green;
+		}
+		60%{
+			border: 1px solid yellow;
+		}
+		75%{
+			border: 1px solid orange;
+		}
+		90%{
+			border: 1px solid indianred;
+		}
+		100%{
+			border: 1px solid white;
+		}
+
+	}
+</style>
+<body>
+	<div class="container">
+		<form>
+			<div>
+				<label>
+					<input type="text">
+					<span>Username</span>
+				</label>
+			</div>
+			<div>
+				<label>
+					<input type="password">
+					<span>Password</span>
+				</label>
+			</div>
+			<div>
+				<button type="button">Submit</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

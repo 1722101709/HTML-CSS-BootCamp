@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Loading......</title>
+</head>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+		color: #F3F3F3;
+	}
+	body{
+		background: #010101;
+	}
+	.container{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.sb{
+		display: inline-block;
+		width: 20px;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background: green;
+		position: absolute;
+		right: 120px;
+		animation: 2s move infinite;
+		z-index: 11;
+	}
+	.lb{
+		display: inline-block;
+		width: 70px;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background: orange;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: 2s change infinite;
+	}
+	.lb::before, .lb::after{
+		content: ' ';
+		display: inline-block;
+		width: 10px;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		background: red;
+	}
+	.lb::before{
+		position: relative;
+		right: 30px;
+		animation: 2s change infinite;
+	}
+	.lb::after{
+		position: relative;
+		left: 30px;
+		animation: 2s change infinite;
+	}
+	@keyframes move {
+		0%{
+			background: orange;
+		}
+		25%{
+			background: green;
+			transform: translateX(75px);
+		}
+		50%{
+			transform: translateX(200px);
+		}
+		75%{
+			transform: translateX(75px);
+		}
+		100%{
+			background: indianred;
+			transform: translateX(0px);
+		}
+	}
+	@keyframes change {
+		0%{
+			background: orange;
+		}
+		25%{
+			background: green;
+		}
+		100%{
+			background: indianred;
+		}
+	}
+	@keyframes react {
+		23%{
+
+		}
+	}
+</style>
+<body>
+	<div class="container">
+		<span class="sb"></span>
+		<span class="lb"></span>
+	</div>
+</body>
+</html>
